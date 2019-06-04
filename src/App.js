@@ -1,26 +1,42 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, {Component} from 'react';
+import store from './store'
+import {Provider} from 'react-redux'
+import { Switch, Route, Redirect } from 'react-router-dom'
+import { connect } from 'react-redux'
+import { withRouter } from 'react-router'
+import Auth from './components/Auth'
+import GameList from './components/GameList'
+import Game from './components/Game'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+
+class App extends Component {
+  render() {
+    return (
+      <Provider store={store}>
+        <div className='App-header'>
+        <div>
+        {!this.props.authenticated &&
+            <Switch>
+                <Route path="/login" component={Auth}/>
+                <Route path="" render={() => <Redirect to="/login" />} />
+            </Switch>}
+
+        {this.props.authenticated &&
+            <Switch>
+                <Route path="/" exact component={GameList} />
+                <Route path="/game" component={Game} />
+                <Route path="" render={() => <Redirect to="/" />} />
+            </Switch>}
     </div>
-  );
+        </div>
+      </Provider>
+    );
+  }
 }
 
-export default App;
+const mapStateToProps = state => ({
+    authenticated: !!state.login
+})
+
+// export default Main;
+export default withRouter(connect(mapStateToProps)(App))
