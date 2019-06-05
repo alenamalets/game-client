@@ -1,6 +1,6 @@
 import React from 'react'
+import JoinGame from './JoinGame';
 import {connect} from 'react-redux'
-
 
 
 class Game extends React.Component{
@@ -8,7 +8,7 @@ class Game extends React.Component{
   render(){
     return(
     <div>
-        <h1>Fight game</h1>
+        Fight game
     </div>
     )
   }
