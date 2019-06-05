@@ -7,7 +7,6 @@ import { withRouter } from 'react-router'
 import Auth from './components/Auth'
 import GameList from './components/GameList'
 import Game from './components/Game'
-import JoinGame from './components/JoinGame';
 
 
 class App extends Component {
@@ -19,14 +18,13 @@ class App extends Component {
         {!this.props.authenticated &&
             <Switch>
                 <Route path="/login" component={Auth}/>
-                <Route path="" render={() => <Redirect to="/login" />} />
+                <Route path="/" render={() => <Redirect to="/login" />} />
             </Switch>}
 
         {this.props.authenticated &&
             <Switch>
                 <Route path="/" exact component={GameList} />
-                <Route path="/game" component={Game} />
-                <Route path="/joingame" component={JoinGame} />
+                <Route path="/game/:id" component={Game} />
                 <Route path="" render={() => <Redirect to="/" />} />
             </Switch>}
     </div>

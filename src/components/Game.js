@@ -1,5 +1,4 @@
 import React from 'react'
-import JoinGame from './JoinGame';
 import {connect} from 'react-redux'
 
 
