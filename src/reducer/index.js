@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux'
 import {users, sent, login } from './users'
-import {game, sentGame, currentGame} from './game'
+import {game, sentGame, currentGame, updateGame} from './game'
 
 const allReducers = combineReducers({
   users,
@@ -8,6 +8,7 @@ const allReducers = combineReducers({
   login,
   game,
   sentGame,
+  updateGame,
   currentGame
 })
 export default allReducers

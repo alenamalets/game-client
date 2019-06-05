@@ -8,3 +8,16 @@ export function sendGame (data) {
     .then()
   return { type: 'GAME_SENT' }
 }
+
+const gameUpdateSuccess = game => ({
+  type: 'GAME_UPDATE_SUCCESS',
+  game
+})
+
+export const updateGameAction = (id, data) => (dispatch) => {
+  request
+    .put(`${baseUrl}/game/${id}`)
+    .send(data)
+    .then()
+  return{ type: 'GAME_UPDATED'}
+}

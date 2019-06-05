@@ -1,7 +1,6 @@
 import React from 'react'
 import '../styles/fightgame.css'
 import ProgressBar from 'react-bootstrap/ProgressBar'
-import JoinGame from './JoinGame';
 import {connect} from 'react-redux'
 
 
