@@ -7,6 +7,7 @@ import { withRouter } from 'react-router'
 import Auth from './components/Auth'
 import GameList from './components/GameList'
 import Game from './components/Game'
+import JoinGame from './components/JoinGame';
 
 
 class App extends Component {
@@ -25,6 +26,7 @@ class App extends Component {
             <Switch>
                 <Route path="/" exact component={GameList} />
                 <Route path="/game" component={Game} />
+                <Route path="/joingame" component={JoinGame} />
                 <Route path="" render={() => <Redirect to="/" />} />
             </Switch>}
     </div>
