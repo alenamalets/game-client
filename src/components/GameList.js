@@ -2,7 +2,7 @@ import React from 'react'
 import {connect} from 'react-redux'
 import {sendGame, updateGameAction} from '../actions/game'
 import { Link, Redirect } from 'react-router-dom'
-
+import '../styles/gamelist.css'
 
 
 class GameList extends React.Component{
@@ -64,28 +64,30 @@ class GameList extends React.Component{
     const gameList = this.props.games
             .map((game, index) => {
                 return (
-                    <div key={index}>
+                    <div className="game-list" 
+                    key={index}>
                         <p>Game number {game.id} </p>
                         {game.status1 ===1 ?
-                        <div>
+                        <div className="game-players">
                         <button onClick={()=>this.updateGame(game.id)}>Join player 1 </button> 
                         {this.state.player1 !== 0 && <Redirect to={`/game/${game.id}`}/>} 
                         </div>:
-                        <p>PLAYER 1 IS HERE </p>   }
+                        <p className="players">PLAYER 1 IS HERE </p>   }
 
                         {game.status2===1 ?
                         <div>
                         <button onClick={()=>this.updateGame2(game.id)}>Join player 2 </button> 
                         {this.state.player2 !== 0 && <Redirect to={`/game/${game.id}`}/>} 
                         </div>:
-                        <p>PLAYER 2 IS HERE. GAME FULL </p>   }
+                        <p className="players">PLAYER 2 IS HERE. GAME FULL </p>   }
                     </div>
                 )
             })
     return(
     <div>
-      <button onClick={this.onSend}>
-          CREATE NEW GAME
+      <button className="game-list" 
+      onClick={this.onSend}>
+          Create New Game
       </button>
       {gameList}
     </div>

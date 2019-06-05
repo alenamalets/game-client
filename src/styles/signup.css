@@ -1,0 +1,38 @@
+.signup , .login {
+  color:chocolate;
+  float: left;
+  background-color: #f2f2f2;
+  border-radius: 20px;
+  opacity: 0.8;
+  position: relative;
+  left:25%;
+  top:250px;
+  margin-right: 50px;
+  height:350px;
+  width:350px;
+  text-align: center;
+}
+.signup h1 , .login h1{ 
+  text-align: center;
+  margin: 35px;
+}
+
+.signup input , .login input{
+    padding:10px;
+    border-radius: 20px;
+    border: 2px solid chocolate;
+    margin-bottom: 20px;
+    width: 200px;
+    color:chocolate;
+    font-size: 15px;
+    box-shadow: 2px 2px 2px 2px rgb(218, 145, 145);
+}
+.signup button , .login button{
+  border-radius: 20px;
+  font-size: 20px;
+  border: 2px solid chocolate;
+  color:#f2f2f2;
+  padding: 5px;
+  width:150px;
+  background-color: rgb(168, 71, 2);
+}
