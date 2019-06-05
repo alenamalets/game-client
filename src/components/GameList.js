@@ -16,6 +16,7 @@ class GameList extends React.Component{
       password: '',
       name: ''
     })
+
   }
 
   render(){

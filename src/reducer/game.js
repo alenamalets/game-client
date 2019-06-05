@@ -15,3 +15,11 @@ export function sentGame (state = false, action) {
         return state
     }
 }
+export function currentGame (state = null, action) {
+  switch (action.type) {
+    case 'CURRENT_GAME':
+      return action.payload
+    default:
+      return state
+  }
+}
