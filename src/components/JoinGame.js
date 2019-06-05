@@ -18,16 +18,18 @@
 //   //   })
 //   // }
 
+
 //  render(){
 //    return(<div>
 //      <p>Game Id <span>1</span></p>
 //      <button>
 //      <Link to={`/game`}>
-//         CREATE NEW GAME
+//         JOIN GAME
 //       </Link>
 //      </button>
 //    </div>)
 //  }
+
 
 // }
 // // const mapStateToProps = state => ({
