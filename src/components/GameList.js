@@ -6,6 +6,7 @@ import JoinGame from './JoinGame';
 
 
 class GameList extends React.Component{
+
   // state={
   //  player1: this.props.player1,
   //  player2: 0
@@ -20,7 +21,6 @@ class GameList extends React.Component{
   // }
 
   
-
   render(){
     return(<div>
     <button onClick={this.onSend}>

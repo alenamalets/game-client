@@ -1,7 +1,9 @@
 import React from 'react'
 import '../styles/fightgame.css'
-
 import ProgressBar from 'react-bootstrap/ProgressBar'
+import JoinGame from './JoinGame';
+import {connect} from 'react-redux'
+
 
 
 class Game extends React.Component{
@@ -62,4 +64,7 @@ class Game extends React.Component{
   }
 }
 
-export default Game
+const mapStateToProps = state => ({
+  player1: state.login
+})
+export default connect(mapStateToProps, ) (Game)
