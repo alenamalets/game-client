@@ -64,26 +64,29 @@ class GameList extends React.Component{
                 return (
                     <div className="game-list" 
                     key={index}>
-                        <p>Game number {game.id} </p>
+                      <div className="game-details">
+                        <p id="game-id">Game number {game.id} </p>
                         {game.status1 ===1 ?
                         <div className="game-players">
-                        <button onClick={()=>this.updateGame(game.id)}>Join player 1 </button> 
+                        <button  onClick={()=>this.updateGame(game.id)}>Join player 1 </button> 
                         {this.state.player1 !== 0 && <Redirect to={`/game/${game.id}`}/>} 
                         </div>:
-                        <p className="players">PLAYER 1 IS HERE </p>   }
+                        <p id="game-id1">Player 1 is here!! </p>   }
 
                         {game.status2===1 ?
                         <div>
-                        <button onClick={()=>this.updateGame2(game.id)}>Join player 2 </button> 
+                        <button  onClick={()=>this.updateGame2(game.id)}>Join player 2 </button> 
                         {this.state.player2 !== 0 && <Redirect to={`/game/${game.id}`}/>} 
                         </div>:
-                        <p className="players">PLAYER 2 IS HERE. GAME FULL </p>   }
+                        <p id="game-id1">Player 2 is here , Game full!! </p>   }
                     </div>
+                  </div>
                 )
             })
     return(
     <div>
-      <button className="game-list" 
+      <button  
+       id="create-game"
       onClick={this.onSend}>
           Create New Game
       </button>
