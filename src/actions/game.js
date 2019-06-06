@@ -9,10 +9,6 @@ export function sendGame (data) {
   return { type: 'GAME_SENT' }
 }
 
-const gameUpdateSuccess = game => ({
-  type: 'GAME_UPDATE_SUCCESS',
-  game
-})
 
 export const updateGameAction = (id, data) => (dispatch) => {
   request

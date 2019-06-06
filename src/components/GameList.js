@@ -1,8 +1,8 @@
 import React from 'react'
 import {connect} from 'react-redux'
 import {sendGame, updateGameAction} from '../actions/game'
-import { Link, Redirect } from 'react-router-dom'
 import '../styles/gamelist.css'
+import { Redirect } from 'react-router-dom'
 
 
 class GameList extends React.Component{
@@ -35,12 +35,12 @@ class GameList extends React.Component{
       ...this.state,
       player1 : this.props.player,
       status1 : 2,
-      health1: 100,
+      health1: 20,
       // redirect1: true
     }, () => {
-      this.props.updateGameAction(id, this.state)
+      const info = {player1: this.state.player1, status1:this.state.status1,  health1:this.state.health1}
+      this.props.updateGameAction(id, info)
     })  
-    console.log('state1222', this.props.player);
   }
 
   updateGame2 = (id) => {
@@ -49,18 +49,16 @@ class GameList extends React.Component{
       ...this.state,
       player2 : this.props.player,
       status2 : 2,
-      health2: 100,
+      health2: 20,
       // redirect1: true
     }, () => {
-      this.props.updateGameAction(id, this.state)
+      const info = {player2: this.state.player2, status2:this.state.status2,  health2:this.state.health2}
+      this.props.updateGameAction(id, info)
     })  
-    console.log('state1222', this.props.player);
   }
 
   
   render(){
-    console.log('state', this.state);
-   
     const gameList = this.props.games
             .map((game, index) => {
                 return (
