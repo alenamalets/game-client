@@ -6,11 +6,12 @@
   opacity: 0.8;
   position: relative;
   left:25%;
-  top:250px;
+  top:220px;
   margin-right: 50px;
   height:350px;
   width:350px;
   text-align: center;
+  margin-top: 15px;
 }
 .signup h1 , .login h1{ 
   text-align: center;

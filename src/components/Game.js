@@ -71,21 +71,25 @@ class Game extends React.Component{
 
           <p>Name: {player1}</p>
           <p>Health: {health1}</p><br/>
-          <ProgressBar className ="progress"  role="progressbar" now={health1} 
-          label={`${health1}%`} srOnly />
+          <div><ProgressBar className ="progress"  role="progressbar" now={health1} 
+          label={`${health1}%`} srOnly /></div>
           <img src="http://www.stickpng.com/assets/images/5c6826733ce41c0ef9f4bd23.png"
            alt="player1"
+           id="player1-click"
            onClick={() => this.playerOneHealth(health1)}/>
         </div>
 
-        <div className="player-2">
+          <div className="player-2">
+        <div>
           <p>Name:  {player2}</p>
           <p>Health: {health2}</p><br/>
-          <ProgressBar className ="progress"  role="progressbar" now={health2} 
-          label={`${health2}%`} srOnly />
+          <div><ProgressBar className ="progress"  role="progressbar" now={health2} 
+          label={`${health2}%`} srOnly /></div>
           <img src="https://purepng.com/public/uploads/large/purepng.com-samuraisamuraimilitarymedievalfighterwarriorarmorjapanese-1421526964522deerm.png"
           alt="player1"
+          id="player2-click"
           onClick={()=>this.playerTwoHealth(health2)}/>
+        </div>
         </div>
     </div>
     )

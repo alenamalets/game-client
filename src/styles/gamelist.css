@@ -1,4 +1,4 @@
-.game-list button , button {
+button{
   border-radius: 20px;
   font-size: 20px;
   border: 2px solid chocolate;
@@ -6,16 +6,24 @@
   padding: 5px;
   width:150px;
   background-color: rgb(168, 71, 2);
-  margin-top:15px;
+  margin-top:10px;
+  margin-bottom:5px;
 }
-
-p{
-  text-align: center;
+#create-game{
+  width: 200px;
+}
+.game-details{
+position: relative;
+left: 35%;
   background-color: #f2f2f2;
-  border-radius: 20px;
   opacity: 0.8;
-  margin:10px auto;
-  width: 150px;
-  font-size:15px;
-  color:chocolate
+  font-size:20px;
+  color:chocolate;
+  width:350px;
+  border-radius: 20px;
+}
+#game-id{
+  padding-top:2px;
+font-weight: bold;
+font-size: 26px;
 }
