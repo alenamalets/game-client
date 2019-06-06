@@ -118,6 +118,7 @@ class Game extends React.Component{
 
           <p>Name: {player1}</p>
           <p>Health: {health1}</p><br/>
+
           <ProgressBar className ="progress"  role="progressbar" now={health1} 
           label={`${health1}%`} srOnly />
           {two === true ?
@@ -138,7 +139,8 @@ class Game extends React.Component{
           }
         </div>
 
-        <div className="player-2">
+          <div className="player-2">
+        <div>
           <p>Name:  {player2}</p>
           <p>Health: {health2}</p><br/>
           <ProgressBar className ="progress"  role="progressbar" now={health2} 
@@ -159,6 +161,7 @@ class Game extends React.Component{
           alt="player2"/>
             </div>
           }
+        </div>
         </div>
     </div>
 
