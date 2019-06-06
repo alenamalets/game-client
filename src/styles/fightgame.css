@@ -1,6 +1,7 @@
 
 .fight-game h1{
- text-align: center
+ text-align: center;
+ color:chocolate;
 }
 .fight-game{
   align-content: center;
@@ -14,8 +15,14 @@
 }
   .fight-game p{
     font-size: 20px;
-    color:sienna;
+    color:chocolate;
     margin-left:10px;
+    width: 200px;
+    
+  }
+
+  .player-1 p , .player-2 p{
+    opacity: 0.9;
   }
 
 .player-1 img , .player-2 img{
@@ -43,7 +50,7 @@
   color: #fff;
   text-align: center;
   white-space: nowrap;
-  background-color: green;
+  background-color:sienna ;
   transition: width 0.6s ease;
 }
 

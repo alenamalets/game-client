@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import store from './store'
+import './App.css'
 import {Provider} from 'react-redux'
 import { Switch, Route, Redirect } from 'react-router-dom'
 import { connect } from 'react-redux'
@@ -13,7 +14,7 @@ class App extends Component {
   render() {
     return (
       <Provider store={store}>
-        <div className='App-header'>
+        <div className='App'>
         <div>
         {!this.props.authenticated &&
             <Switch>

@@ -27,16 +27,18 @@ class Login extends React.Component {
   render () {    
     return (
       <main>
-        <h1>LOGIN:</h1>
-        <label>
-               Email:
-        <input type='text' onChange={this.onChange} name ='email' value={this.state.email}/>
-        </label>
-        <label>
-               Password:
-        <input type='text' onChange={this.onChange} name ='password' value={this.state.password}/>
-        </label>
-        <button onClick={this.onSend}>confirm</button>
+        <h1>Sign In</h1>
+       
+        <input type='text' onChange={this.onChange} 
+        name ='email' value={this.state.email}
+        placeholder="email id"/><br/>
+       
+       
+        <input type='text' onChange={this.onChange} 
+        name ='password' value={this.state.password}
+        placeholder="password"/><br/>
+      
+        <button onClick={this.onSend}>Sign In</button>
       </main>
     )
   }

@@ -68,11 +68,12 @@ class Game extends React.Component{
        <h1> Fight game</h1>
       
         <div className="player-1">
+
           <p>Name: {player1}</p>
           <p>Health: {health1}</p><br/>
           <ProgressBar className ="progress"  role="progressbar" now={health1} 
           label={`${health1}%`} srOnly />
-          <img src="http://shogunvseurope.weebly.com/uploads/3/1/2/8/31289321/1432175589.png"
+          <img src="https://www.pinclipart.com/picdir/middle/239-2395494_samurai-transparent-nordic-clipart.png"
            alt="player1"
            onClick={() => this.playerOneHealth(health1)}/>
         </div>
@@ -82,7 +83,7 @@ class Game extends React.Component{
           <p>Health: {health2}</p><br/>
           <ProgressBar className ="progress"  role="progressbar" now={health2} 
           label={`${health2}%`} srOnly />
-          <img src="https://www.bushidokarate.ie/samurai.png" 
+          <img src="https://www.pngfind.com/pngs/m/86-869880_samurai-png-picture-silver-samurai-fan-art-transparent.png"
           alt="player1"
           onClick={()=>this.playerTwoHealth(health2)}/>
         </div>
