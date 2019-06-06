@@ -1,0 +1,57 @@
+
+.fight-game h1{
+ text-align: center;
+ color:chocolate;
+}
+.fight-game{
+  align-content: center;
+}
+
+.player-1 , .player-2{
+  float: left;
+  position: relative; 
+  left: 12%;
+  margin-right: 55px; 
+}
+  .fight-game p{
+    font-size: 20px;
+    color:chocolate;
+    margin-left:10px;
+    width: 200px;
+    
+  }
+
+  .player-1 p , .player-2 p{
+    opacity: 0.9;
+  }
+
+.player-1 img , .player-2 img{
+  width: 400px;
+  height: 400px;
+  border: 1px solid #eee;
+  border-radius: 25px;
+ box-shadow: 2px 2px #eee;
+}
+
+.progress {
+  display: flex;
+  height: 1.5rem;
+  overflow: hidden;
+  font-size: 0.75rem;
+  background-color: #e9ecef;
+  border-radius: 0.25rem;
+  margin-bottom: 25px;
+}
+
+.progress-bar {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: #fff;
+  text-align: center;
+  white-space: nowrap;
+  background-color:sienna ;
+  transition: width 0.6s ease;
+}
+
+

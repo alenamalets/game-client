@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import store from './store'
+import './App.css'
 import {Provider} from 'react-redux'
 import { Switch, Route, Redirect } from 'react-router-dom'
 import { connect } from 'react-redux'
@@ -13,18 +14,18 @@ class App extends Component {
   render() {
     return (
       <Provider store={store}>
-        <div className='App-header'>
+        <div className='App'>
         <div>
         {!this.props.authenticated &&
             <Switch>
                 <Route path="/login" component={Auth}/>
-                <Route path="" render={() => <Redirect to="/login" />} />
+                <Route path="/" render={() => <Redirect to="/login" />} />
             </Switch>}
 
         {this.props.authenticated &&
             <Switch>
                 <Route path="/" exact component={GameList} />
-                <Route path="/game" component={Game} />
+                <Route path="/game/:id" component={Game} />
                 <Route path="" render={() => <Redirect to="/" />} />
             </Switch>}
     </div>
