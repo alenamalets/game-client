@@ -3,6 +3,7 @@ import '../styles/fightgame.css'
 import ProgressBar from 'react-bootstrap/ProgressBar'
 import {connect} from 'react-redux'
 import {updateGameAction} from '../actions/game'
+import Gameover from './Gameover'
 
 class Game extends React.Component{
   
@@ -13,9 +14,9 @@ class Game extends React.Component{
     if (health <= 0) {
       const info = {health2: health}
       this.props.updateGameAction(game.id, info)
-      setTimeout(() => {
-        alert('Player1 win');
-      }, 500)
+      // setTimeout(() => {
+      //   alert('Player1 win');
+      // }, 500)
     }
     else {
       const info = {health2: health}
@@ -30,9 +31,9 @@ class Game extends React.Component{
     if (health <= 0) {
       const info = {health1: health}
       this.props.updateGameAction(game.id, info)
-      setTimeout(() => {
-        alert('Player2 win');
-      }, 500)
+      // setTimeout(() => {
+      //   alert('Player2 win');
+      // }, 500)
     }
     else {
       const info = {health1: health}
@@ -88,42 +89,52 @@ class Game extends React.Component{
     if(game.player2 === 0) return true
     else return false
   }
-
+  gameover = () => {
+    const game = this.props.games.find(element => 
+      element.id == this.props.match.params.id)
+    if(game.player1 !== 0 && game.health1 === 0) return 1
+    else if (game.player2 !== 0 && game.health2 === 0) return 2
+    else return 0
+  }
   render(){
-   const player1 =  this.getName1()
-   const player2 = this.getName2()
-   const health1 = this.getHealth1()
-   const health2 = this.getHealth2()
-   const one = this.findPlayer1()
-   const two = this.findPlayer2()
-   const here1 = this.playerHere1()
-   const here2 = this.playerHere2()
+    const player1 =  this.getName1()
+    const player2 = this.getName2()
+    const health1 = this.getHealth1()
+    const health2 = this.getHealth2()
+    const one = this.findPlayer1()
+    const two = this.findPlayer2()
+    const here1 = this.playerHere1()
+    const here2 = this.playerHere2()
+    const over = this.gameover()
 
-    return(
-    <div className="fight-game">
-       <h1> Fight game</h1>
-      
+    const winner = over === 1
+      ? player2
+      : player1
+
+    const gameover = <Gameover winner={winner}/>
+    const game = <div className="fight-game">
+      <h1> Fight game</h1>
         <div className="player-1">
 
           <p>Name: {player1}</p>
           <p>Health: {health1}</p><br/>
           <ProgressBar className ="progress"  role="progressbar" now={health1} 
           label={`${health1}%`} srOnly />
-           {two === true ?
+          {two === true ?
           <div>
           <p>Your enemy</p>
-           {here1 === true ? 
+          {here1 === true ? 
             <p>Waiting for enemy...</p> :
             <img src="http://www.stickpng.com/assets/images/5c6826733ce41c0ef9f4bd23.png"
-           alt="player1"
-           onClick={() => this.playerOneHealth(health1)}/>
+          alt="player1"
+          onClick={() => this.playerOneHealth(health1)}/>
           } 
           </div> :
           <div>
-           <p>It's you</p>
+          <p>It's you</p>
           <img src="http://www.stickpng.com/assets/images/5c6826733ce41c0ef9f4bd23.png"
           alt="player1"/>
-           </div>
+          </div>
           }
         </div>
 
@@ -136,20 +147,29 @@ class Game extends React.Component{
           <div>
           <p>Your enemy</p>
           {here2 === true ? 
-           <p>Waiting for enemy...</p> :
-           <img src="https://purepng.com/public/uploads/large/purepng.com-samuraisamuraimilitarymedievalfighterwarriorarmorjapanese-1421526964522deerm.png"
-           alt="player2"
-           onClick={()=>this.playerTwoHealth(health2)}/>
+          <p>Waiting for enemy...</p> :
+          <img src="https://purepng.com/public/uploads/large/purepng.com-samuraisamuraimilitarymedievalfighterwarriorarmorjapanese-1421526964522deerm.png"
+          alt="player2"
+          onClick={()=>this.playerTwoHealth(health2)}/>
           }
           </div> :
           <div>
-           <p>It's you</p>
-           <img src="https://purepng.com/public/uploads/large/purepng.com-samuraisamuraimilitarymedievalfighterwarriorarmorjapanese-1421526964522deerm.png"
-           alt="player2"/>
+          <p>It's you</p>
+          <img src="https://purepng.com/public/uploads/large/purepng.com-samuraisamuraimilitarymedievalfighterwarriorarmorjapanese-1421526964522deerm.png"
+          alt="player2"/>
             </div>
           }
         </div>
     </div>
+
+    return(
+      <div>
+        {
+          over === 1 || over === 2
+            ? gameover
+            : game   
+        }
+      </div>
     )
   }
 }
