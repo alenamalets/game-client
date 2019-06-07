@@ -27,3 +27,11 @@ export const login = (email, password) => dispatch => {
         })
         .catch(console.error)
 }
+
+export const logout = (id) => {
+    id = null
+    return {
+      type: 'LOGOUT',
+      id
+    }
+  }
