@@ -35,7 +35,7 @@ class GameList extends React.Component{
       ...this.state,
       player1 : this.props.player,
       status1 : 2,
-      health1: 20,
+      health1: 100,
       // redirect1: true
     }, () => {
       const info = {player1: this.state.player1, status1:this.state.status1,  health1:this.state.health1}
@@ -49,7 +49,7 @@ class GameList extends React.Component{
       ...this.state,
       player2 : this.props.player,
       status2 : 2,
-      health2: 20,
+      health2: 100,
       // redirect1: true
     }, () => {
       const info = {player2: this.state.player2, status2:this.state.status2,  health2:this.state.health2}
