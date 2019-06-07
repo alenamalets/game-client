@@ -1,5 +1,5 @@
 import request from 'superagent'
-const baseUrl = 'https://arcane-peak-40379.herokuapp.com'
+const baseUrl = 'https://sheltered-chamber-16906.herokuapp.com'
 
 export function sendGame (data) {
   request
