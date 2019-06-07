@@ -24,7 +24,7 @@ class App extends Component {
 
         {this.props.authenticated &&
             <Switch>
-                <Route path="/" exact component={GameList} />
+                <Route path="/" exact component={GameList}/>
                 <Route path="/game/:id" component={Game} />
                 <Route path="" render={() => <Redirect to="/" />} />
             </Switch>}

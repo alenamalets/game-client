@@ -9,6 +9,25 @@
 .fight-game{
   align-content: center;
 }
+.fight-game p{
+  position: relative;
+  font-size: 25px;
+  font-weight: bold;
+  color:chocolate;
+  margin-left:10px;
+  width: 200px;
+  top: 80px;
+  background-color: #f2f2f2;
+  border-radius:20px;
+  opacity: 0.8;
+  text-align: center;
+}
+
+
+
+.player-1 p , .player-2 p{
+  opacity: 0.9;
+}
 
 .player-1 , .player-2{
   float: left; 
@@ -17,41 +36,30 @@
   margin-right: 55px; 
 }
 
-
-
-#player-img{
-  background-color: transparent;
-}
-  .fight-game p{
-    position: relative;
-    font-size: 25px;
-    font-weight: bold;
-    color:chocolate;
-    margin-left:10px;
-    width: 200px;
-    top: 80px;
-    background-color: #f2f2f2;
-    border-radius:20px;
-    opacity: 0.8;
-    text-align: center;
-  }
-
+#id{
+  float: right; 
+  position: absolute; 
+  margin:0;
+  left:55%;
+  top:95px;
  
+}
 
-  .player-1 p , .player-2 p{
-    opacity: 0.9;
-  }
-
-.player-1 img , .player-2 img{
+ img {
   position: relative;
-  top:200px;
+  top:220px;
   width: 400px;
   height: 400px;
 
 }
-#player2-click:active , #player1-click:active {
+
+#player2-click:active , #player1-click:active{
   width:170px;
-  height:174px;
+  height:174px; 
+
+}
+#player2-click:hover , #player1-click:hover{
+  cursor: pointer;
 }
 .progress {
   position: relative;
