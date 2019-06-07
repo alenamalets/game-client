@@ -9,7 +9,7 @@ const devTools = window.__REDUX_DEVTOOLS_EXTENSION__
   ? window.__REDUX_DEVTOOLS_EXTENSION__()
   : x => x
 
-  const socket = socketset('https://sheltered-sierra-11084.herokuapp.com')
+  const socket = socketset('https://arcane-peak-40379.herokuapp.com')
 
   const middleware = applyMiddleware(reduxThunk, socket)
   
