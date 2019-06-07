@@ -30,8 +30,9 @@ class Auth extends React.Component {
   render () {
     return (
       <main >
+        <h1 id="msg">Welcome to Fight Game !</h1>
         <div className="signup">
-        <h1>Sign up Now!</h1>
+        <h2>Sign up Now!</h2>
 
       
         <input type='text' onChange={this.onChange} 

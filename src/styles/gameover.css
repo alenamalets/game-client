@@ -15,7 +15,8 @@
   margin-bottom: 20px;
 }
 #winner{
-  margin-top:50px;
+  top: 300px;
+  padding-top:150px;
   font-size: 50px;
 }
 
@@ -30,4 +31,5 @@
   margin-top:10px;
   margin-bottom:5px;
   text-decoration: none;
+  
 }
