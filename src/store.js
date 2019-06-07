@@ -9,7 +9,7 @@ const devTools = window.__REDUX_DEVTOOLS_EXTENSION__
   ? window.__REDUX_DEVTOOLS_EXTENSION__()
   : x => x
 
-  const socket = socketset('localhost:4000')
+  const socket = socketset('https://young-temple-82480.herokuapp.com')
 
   const middleware = applyMiddleware(reduxThunk, socket)
   

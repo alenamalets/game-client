@@ -1,5 +1,5 @@
 import request from 'superagent'
-const baseUrl = 'http://localhost:4000'
+const baseUrl = 'https://young-temple-82480.herokuapp.com'
 
 export function sendGame (data) {
   request
