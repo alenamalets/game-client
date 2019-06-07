@@ -6,6 +6,6 @@ const allReducers = combineReducers({
   users,
   sent,
   login,
-  game
+  game,
 })
 export default allReducers

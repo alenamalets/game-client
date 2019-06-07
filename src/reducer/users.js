@@ -19,8 +19,9 @@ export function sent (state = false, action) {
 export function login(state = null, action = {}) {
     switch (action.type) {
         case 'LOGIN_SUCCESS': 
-          console.log('action', action);
-            return action.id;   
+          return action.id;  
+        case 'LOGOUT': 
+          return action.id;   
         default:
             return state;
     }
