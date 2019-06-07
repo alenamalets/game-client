@@ -116,21 +116,22 @@ class Game extends React.Component{
       <h1> Fight game</h1>
         <div className="player-1">
 
-          <p>Name: {player1}</p>
-          <p>Health: {health1}</p><br/>
-
+          <p id="player-details">Name: {player1} <br/> Health: {health1}</p>
+          
           <ProgressBar className ="progress"  role="progressbar" now={health1} 
           label={`${health1}%`} srOnly />
+
           {two === true ?
-          <div>
+          <div id="player-status">
           <p>Your enemy</p>
           {here1 === true ? 
             <p>Waiting for enemy...</p> :
             <img src="http://www.stickpng.com/assets/images/5c6826733ce41c0ef9f4bd23.png"
-          alt="player1"
+          alt="player1" id="player-img"
           onClick={() => this.playerOneHealth(health1)}/>
           } 
           </div> :
+
           <div>
           <p>It's you</p>
           <img src="http://www.stickpng.com/assets/images/5c6826733ce41c0ef9f4bd23.png"
@@ -141,8 +142,8 @@ class Game extends React.Component{
 
           <div className="player-2">
         <div>
-          <p>Name:  {player2}</p>
-          <p>Health: {health2}</p><br/>
+          <p>Name:  {player2} <br/>Health: {health2}</p>
+         
           <ProgressBar className ="progress"  role="progressbar" now={health2} 
           label={`${health2}%`} srOnly />
           {one === true ?
